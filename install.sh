@@ -1,2 +1,2 @@
-echo 'source ~/bash/settings' >> ~/.bashrc
+echo 'source ~/bash-settings/settings' >> ~/.bashrc
 
