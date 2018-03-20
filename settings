@@ -18,3 +18,5 @@ export PATH="$PATH:$HOME/.local/bin"
 export IDF_PATH=~/esp/esp-idf
 
 source <(kubectl completion bash)
+
+eval "$(direnv hook bash)"
