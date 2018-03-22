@@ -17,6 +17,9 @@ export PATH="$PATH:$HOME/esp/xtensa-esp32-elf/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export IDF_PATH=~/esp/esp-idf
 
+# curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+# chmod +x ./kubectl
+# sudo mv ./kubectl /usr/local/bin/kubectl
 source <(kubectl completion bash)
 
 eval "$(direnv hook bash)"
