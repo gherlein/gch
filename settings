@@ -20,3 +20,5 @@ export IDF_PATH=~/esp/esp-idf
 source <(kubectl completion bash)
 
 eval "$(direnv hook bash)"
+
+alias swagger="docker run --rm -it -e GOPATH=$HOME/go:/go -v $HOME:$HOME -w $(pwd) quay.io/goswagger/swagger" 
