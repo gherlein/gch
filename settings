@@ -8,9 +8,24 @@ eval `~/keychain/keychain --eval --agents ssh id_rsa`
 export PATH='/home/gherlein/.linuxbrew/bin:/home/gherlein/.linuxbrew/sbin':"$PATH"
 
 
-alias ls='ls --color'
-LS_COLORS='di=1;34:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0;103:ex=35:*.rpm=90'
-export LS_COLORS
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+   alias ls='ls --color'
+   LS_COLORS='di=1;34:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0;103:ex=35:*.rpm=90'
+   export LS_COLORS
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+elif [[ "$OSTYPE" == "cygwin" ]]; then
+        # POSIX compatibility layer and Linux environment emulation for Windows
+elif [[ "$OSTYPE" == "msys" ]]; then
+        # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
+elif [[ "$OSTYPE" == "win32" ]]; then
+        # I'm not sure this can happen.
+elif [[ "$OSTYPE" == "freebsd"* ]]; then
+        # ...
+else
+        # Unknown.
+fi
+
+
 
 # gloang
 export PATH=/usr/lib/go-1.10/bin:$PATH
