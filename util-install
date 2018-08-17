@@ -16,4 +16,11 @@ cd ~
 git clone git@github.com:funtoo/keychain.git
 popd
 
+# install emacs stuff
+pushd .
+cd ~
+git clone git@github.com:gherlein/elisp.git
+cd elisp
+./install.sh
+popd
 
