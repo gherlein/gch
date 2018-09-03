@@ -1,6 +1,6 @@
 # install direnv
 sudo apt install -y direnv
-sudo apt-get install -y emacs24-nox git
+sudo apt-get install -y emacs25-nox git
 sudo apt install linuxbrew-wrapper
 
 
