@@ -1,16 +1,32 @@
-# install direnv
-sudo apt install -y direnv
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+   # install direnv
+   sudo apt install -y direnv
+
+   #install kubectl
+
+   curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+   chmod +x ./kubectl
+   sudo mv ./kubectl /usr/local/bin/kubectl
 
 
-# install kubectl
+elif [[ "$OSTYPE" == "darwin"* ]]; then
 
-curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
-chmod +x ./kubectl
-sudo mv ./kubectl /usr/local/bin/kubectl
+   brew install direnv
+
+elif [[ "$OSTYPE" == "cygwin" ]]; then
+  echo
+elif [[ "$OSTYPE" == "msys" ]]; then
+  echo
+elif [[ "$OSTYPE" == "win32" ]]; then
+  echo
+elif [[ "$OSTYPE" == "freebsd"* ]]; then
+  echo
+else
+  echo
+fi
 
 # install keychain
 pushd .
 cd ~
 git clone git@github.com:funtoo/keychain.git
 popd
-

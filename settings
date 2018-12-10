@@ -1,3 +1,19 @@
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  echo
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+     alias top="top -o cpu"
+elif [[ "$OSTYPE" == "cygwin" ]]; then
+  echo
+elif [[ "$OSTYPE" == "msys" ]]; then
+  echo
+elif [[ "$OSTYPE" == "win32" ]]; then
+  echo
+elif [[ "$OSTYPE" == "freebsd"* ]]; then
+  echo
+else
+  echo
+fi
+
 SSH_ENV="$HOME/.ssh/environment"
 
 eval `~/keychain/keychain --eval --agents ssh id_rsa`
