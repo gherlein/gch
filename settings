@@ -1,5 +1,5 @@
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-  echo
+  alias open="xdg-open"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
      alias top="top -o cpu"
 elif [[ "$OSTYPE" == "cygwin" ]]; then
@@ -31,7 +31,6 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 fi
 
 # gloang
-export PATH=/usr/lib/go-1.10/bin:$PATH
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
