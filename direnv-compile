@@ -1,5 +1,0 @@
-go get github.com/direnv/direnv
-cd $GOPATH/src/github.com/direnv/direnv
-go get ./...
-make
-sudo make install
