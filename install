@@ -1,1 +1,3 @@
-echo 'source ~/bash-settings/settings' >> ~/.bashrc
+echo 'source ~/gch/settings' >> ~/.bashrc
+~/gch/tool-install
+~/gch/set-git

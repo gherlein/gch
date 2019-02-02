@@ -1,5 +1,6 @@
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
    sudo apt-get update
+   sudo apt-get install -y git
    sudo apt-get install -y build-essential
    sudo apt-get install -y direnv
    sudo apt-get install -y emacs25-nox git
