@@ -35,6 +35,10 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 # ESP32
 export PATH="$PATH:$HOME/esp/xtensa-esp32-elf/bin"
 
+# ESP8266
+export PATH="$PATH:$HOME/esp/xtensa-lx106-elf/bin"
+
+
 # PlatformIO
 export PATH="$PATH:$HOME/.local/bin"
 export IDF_PATH=~/esp/esp-idf
