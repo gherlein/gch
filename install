@@ -1,3 +1,18 @@
-echo 'source ~/gch/settings' >> ~/.bashrc
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  echo 'source ~/gch/bashrc' >> ~/.bashrc
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    echo 'source ~/gch/zhrc' >> ~/.zshrc
+elif [[ "$OSTYPE" == "cygwin" ]]; then
+  echo
+elif [[ "$OSTYPE" == "msys" ]]; then
+  echo
+elif [[ "$OSTYPE" == "win32" ]]; then
+  echo
+elif [[ "$OSTYPE" == "freebsd"* ]]; then
+  echo
+else
+  echo
+fi
+
 ~/gch/tool-install
 ~/gch/set-git
