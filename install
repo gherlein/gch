@@ -1,10 +1,9 @@
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   echo 'source ~/gch/bashrc' >> ~/.bashrc
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/
-     ssh-add -K ~/.ssh/id_rsa
-     echo 'source ~/gch/ssh-config' >> ~/.ssh/config
-tools/install.sh)"
+  echo 'source ~/gch/zshrc' >> ~/.zshrc
+  ssh-add -K ~/.ssh/id_rsa
+  echo 'source ~/gch/ssh-config' >> ~/.ssh/config
 elif [[ "$OSTYPE" == "cygwin" ]]; then
   echo
 elif [[ "$OSTYPE" == "msys" ]]; then

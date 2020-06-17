@@ -97,3 +97,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias pip="/usr/local/bin/pip3"
+alias python="/usr/local/bin/python3"
+source ./.bashrc

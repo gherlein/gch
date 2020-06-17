@@ -51,5 +51,3 @@ eval "$(direnv hook bash)"
 
 
 alias gregup="pushd .;cd ~/gch;git pull;cd ~/elisp;git pull;popd"
-alias pip="/usr/local/bin/pip3"
-alias python="/usr/local/bin/python3"
