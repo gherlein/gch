@@ -14,9 +14,15 @@ else
   echo
 fi
 
-# SSH and keychain stuff
+# SSH 
 SSH_ENV="$HOME/.ssh/environment"
-eval `~/keychain/keychain --eval --agents ssh id_rsa`
+
+if ps -p $SSH_AGENT_PID > /dev/null
+then
+   echo "ssh-agent is already running"
+else
+   eval `~/keychain/keychain --eval --agents ssh id_rsa`
+fi
 
 # My colors
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
