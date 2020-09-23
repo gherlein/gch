@@ -18,9 +18,6 @@ fi
 SSH_ENV="$HOME/.ssh/environment"
 eval `~/keychain/keychain --eval --agents ssh id_rsa`
 
-# Homebrew
-export PATH='/home/gherlein/.linuxbrew/bin:/home/gherlein/.linuxbrew/sbin':"$PATH"
-
 # My colors
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
    alias ls='ls --color'
@@ -32,22 +29,11 @@ fi
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
-# ESP32
-export PATH="$PATH:$HOME/esp/xtensa-esp32-elf/bin"
-
-# ESP8266
-export PATH="$PATH:$HOME/esp/xtensa-lx106-elf/bin"
-
-
 # PlatformIO
 export PATH="$PATH:$HOME/.local/bin"
 export IDF_PATH=~/esp/esp-idf
-
-# kubectl
-source <(kubectl completion bash)
 
 # direenv
 eval "$(direnv hook bash)"
 
 
-alias gregup="pushd .;cd ~/gch;git pull;cd ~/elisp;git pull;popd"
