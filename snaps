@@ -1,3 +1,4 @@
+# https://www.kevin-custer.com/blog/disabling-snaps-in-ubuntu-20-04/
 sudo snap remove snap-store
 sudo snap remove gtk-common-themes
 sudo snap remove gnome-3-34-1804
