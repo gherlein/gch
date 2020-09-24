@@ -1,5 +1,7 @@
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   echo 'source ~/gch/bashrc' >> ~/.profile
+elif [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
+  echo 'source ~/gch/bashrc' >> ~/.profile
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   echo 'source ~/gch/zshrc' >> ~/.zshrc
   ssh-add -K ~/.ssh/id_rsa
