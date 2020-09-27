@@ -17,12 +17,20 @@ fi
 # SSH 
 SSH_ENV="$HOME/.ssh/environment"
 
-if ps -p $SSH_AGENT_PID > /dev/null
-then
-   echo "ssh-agent is already running"
-else
-   eval `~/keychain/keychain --eval --agents ssh id_rsa`
-fi
+#if xhost >& /dev/null ; 
+#   echo "display exists" > /tmp/display
+#then 
+#   eval `~/keychain/keychain --eval --agents ssh id_rsa`
+#fi
+
+
+
+#if ps -p $SSH_AGENT_PID > /dev/null
+#then
+#   echo "ssh-agent is already running"
+#else
+#   eval `~/keychain/keychain --eval --agents ssh id_rsa`
+#fi
 
 # My colors
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
@@ -42,4 +50,4 @@ export IDF_PATH=~/esp/esp-idf
 # direenv
 eval "$(direnv hook bash)"
 
-
+eval `~/keychain/keychain --eval --agents ssh id_rsa`
