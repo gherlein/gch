@@ -51,3 +51,6 @@ export IDF_PATH=~/esp/esp-idf
 eval "$(direnv hook bash)"
 
 eval `~/keychain/keychain --eval --agents ssh id_rsa`
+
+# python
+alias pip="pip3"
