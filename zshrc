@@ -99,4 +99,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias pip="/usr/local/bin/pip3"
 alias python="/usr/local/bin/python3"
-source ./.bashrc
+#
+export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
