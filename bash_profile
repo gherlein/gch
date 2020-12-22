@@ -39,6 +39,9 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
    export LS_COLORS
 fi
 
+# local bin
+export PATH="$PATH:$HOME/bin
+
 # gloang
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
