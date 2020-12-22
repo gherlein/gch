@@ -54,3 +54,4 @@ eval `~/keychain/keychain --eval --agents ssh id_rsa`
 
 # python
 alias pip="pip3"
+alias python=python3

@@ -6,7 +6,7 @@ elif [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   echo 'source ~/gch/zshrc' >> ~/.zshrc
   ssh-add -K ~/.ssh/id_rsa
-  echo 'source ~/gch/ssh-config' >> ~/.ssh/config
+  cat ~/gch/ssh-config > ~/.ssh/config
 elif [[ "$OSTYPE" == "cygwin" ]]; then
   echo
 elif [[ "$OSTYPE" == "msys" ]]; then
