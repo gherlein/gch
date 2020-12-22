@@ -40,7 +40,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 fi
 
 # local bin
-export PATH="$PATH:$HOME/bin
+export PATH="$PATH:$HOME/bin"
 
 # gloang
 export GOPATH=$HOME/go
