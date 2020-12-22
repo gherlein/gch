@@ -21,3 +21,6 @@ fi
 
 ~/gch/tool-install
 ~/gch/set-git
+
+mkdir ~/bin
+cp aws-whoami ~/bin
