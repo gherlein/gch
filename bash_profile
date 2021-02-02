@@ -61,3 +61,9 @@ eval `~/keychain/keychain --eval --agents ssh id_rsa`
 # python
 alias pip="pip3"
 alias python=python3
+
+# ruby
+export PATH=$PATH:/usr/local/lib/ruby/gems/3.0.0/bin
+
+# java
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
