@@ -24,7 +24,6 @@ SSH_ENV="$HOME/.ssh/environment"
 #fi
 
 
-
 #if ps -p $SSH_AGENT_PID > /dev/null
 #then
 #   echo "ssh-agent is already running"
@@ -67,3 +66,12 @@ export PATH=$PATH:/usr/local/lib/ruby/gems/3.0.0/bin
 
 # java
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
+
+# esptool
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+   echo $OSTYPE
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+   echo	$OSTYPE
+   export PATH=$PATH:~/Library/Python/3.8/bin
+   echo $PATH
+fi
