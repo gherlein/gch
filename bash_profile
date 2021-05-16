@@ -49,7 +49,7 @@ export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # PlatformIO
-export PATH="$PATH:$HOME/.local/bin"
+export PATH=$PATH:~/.platformio/penv/bin
 export IDF_PATH=~/esp/esp-idf
 
 # direenv
