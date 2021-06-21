@@ -67,6 +67,16 @@ export PATH=$PATH:/usr/local/lib/ruby/gems/3.0.0/bin
 # java
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
 
+# rust
+case ":${PATH}:" in
+    *:"$HOME/.cargo/bin":*)
+        ;;
+    *)
+        # Prepending path in case a system-installed rustc needs to be overridden
+        export PATH="$HOME/.cargo/bin:$PATH"
+        ;;
+esac
+
 # esptool
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
    echo $OSTYPE
