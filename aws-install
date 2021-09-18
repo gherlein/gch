@@ -1,5 +1,5 @@
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-sudo apt install -y nodejs npm
+sudo apt install -y nodejs npm pip
 sudo npm install -g aws-cdk
 sudo npm install --global yarn
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
