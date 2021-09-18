@@ -1,11 +1,18 @@
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-   sudo apt-get update
-   sudo apt-get install -y git
-   sudo apt-get install -y build-essential
-   sudo apt-get install -y direnv
-   sudo apt-get install -y emacs-nox git
-   sudo apt-get install -y linuxbrew-wrapper
-   sudo apt-get install -y apt-transport-https
+  if [  -n "$(uname -a | grep Ubuntu)" ]; then
+     ~/gch/remove-snaps.sh
+     sudo apt-get update
+     sudo apt-get install -y git
+     sudo apt-get install -y build-essential
+     sudo apt-get install -y direnv
+     sudo apt-get install -y emacs-nox git
+     sudo apt-get install -y linuxbrew-wrapper
+     sudo apt-get install -y apt-transport-https
+  else
+     sudo yum update
+     sudo yum install -y git
+     sudo yum install -y emacs-nox 
+  fi  
 
 elif [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
    sudo apt-get update

@@ -1,6 +1,5 @@
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   echo 'source ~/gch/bash_profile' > ~/.bash_profile
-   ~/gch/remove-snaps.sh
   cat ~/gch/ssh-config > ~/.ssh/config
 elif [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
   echo 'source ~/gch/bash_profile' > ~/.bash_profile
