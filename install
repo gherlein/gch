@@ -24,4 +24,4 @@ fi
 ~/gch/set-git
 
 mkdir ~/bin
-cp aws-whoami ~/bin
+cp lock unlock aws-whoami ~/bin
