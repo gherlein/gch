@@ -1,0 +1,11 @@
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+sudo apt install -y nodejs npm
+sudo npm install -g aws-cdk
+sudo npm install --global yarn
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+rm -Rf awscliv2.zip aws
+sudo ./aws/install
+echo "AWS accoount number?"
+read acct
+cdk bootstrap aws://$acct/us-west-2 aws://$acct/us-east-1
