@@ -9,3 +9,4 @@ sudo ./aws/install
 echo "AWS accoount number?"
 read acct
 cdk bootstrap aws://$acct/us-west-2 aws://$acct/us-east-1
+npm install amazon-chime-sdk-js --save
