@@ -85,3 +85,5 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
    export PATH=$PATH:~/Library/Python/3.8/bin
    echo $PATH
 fi
+
+PS1="\$(pwd)> "
