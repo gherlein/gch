@@ -89,7 +89,5 @@ fi
 # AWS Tools
 export PATH=$PATH:~/.toolbox/bin
 
-# Android Tools
-export PATH=$PATH:/Users/gherlein/Library/Android/sdk/platform-tools
-export PATH=$PATH://Users/gherlein/bin/flutter/bin
-export PATH=$PATH:/usr/bin/java
+PS1="\$(pwd)> "
+
