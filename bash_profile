@@ -89,5 +89,5 @@ fi
 # AWS Tools
 export PATH=$PATH:~/.toolbox/bin
 
-PS1="\h\$(pwd)> "
+PS1="\h:\w> "
 
