@@ -44,14 +44,14 @@ fi
 # install keychain
 pushd .
 cd ~
-git clone git@github.com:funtoo/keychain.git
+git clone https://github.com/funtoo/keychain
 popd
 
 
 # install emacs stuff
 pushd .
 cd ~
-git clone git@github.com:gherlein/elisp.git
+git clone https://github.com/gherlein/elisp
 cd elisp
 ./install.sh
 popd
