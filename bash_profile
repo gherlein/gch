@@ -79,5 +79,6 @@ fi
 # AWS Tools
 export PATH=$PATH:~/.toolbox/bin
 
+# prompt
 PS1="\h:\w> "
 
