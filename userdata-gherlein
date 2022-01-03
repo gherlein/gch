@@ -1,8 +1,6 @@
 useradd gherlein
 usermod -G wheel gherlein
 su -c 'cd ~gherlein;curl https://github.com/gherlein.keys | tee -a ~/.ssh/authorized_keys
-su -c 'cd ~;git clone https://github.com/gherlein/gch' gherlein
+su -c 'cd ~gherlein;git clone https://github.com/gherlein/gch' gherlein
 su -c 'cd ~gherlein/gch/;./install' gherlein
-cp ~gherlein/gch/setdns /var/lib/cloud/scripts/per-boot/
-/var/lib/cloud/scripts/per-boot/setdns
 
