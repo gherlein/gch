@@ -1,13 +1,17 @@
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   echo 'source ~/gch/bash_profile' > ~/.bash_profile
   mkdir ~/.ssh
-  curl https://github.com/gherlein.keys > ~/.ssh/authorized_keys' gherlein
+  curl https://github.com/gherlein.keys > ~/.ssh/authorized_keys 
   cat ~/gch/ssh-config > ~/.ssh/config
 elif [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
   echo 'source ~/gch/bash_profile' > ~/.bash_profile
+  mkdir ~/.ssh
+  curl https://github.com/gherlein.keys > ~/.ssh/authorized_keys 
   cat ~/gch/ssh-config > ~/.ssh/config
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   echo 'source ~/gch/bash_profile' > ~/.bash_profile
+  mkdir ~/.ssh
+  curl https://github.com/gherlein.keys > ~/.ssh/authorized_keys 
   ssh-add -K ~/.ssh/id_rsa
   cat ~/gch/ssh-config > ~/.ssh/config
 elif [[ "$OSTYPE" == "cygwin" ]]; then
@@ -21,7 +25,6 @@ elif [[ "$OSTYPE" == "freebsd"* ]]; then
 else
   echo
 fi
-
 ~/gch/tool-install
 ~/gch/set-git
 
