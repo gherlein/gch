@@ -1,5 +1,10 @@
 useradd gherlein
 usermod -G wheel gherlein
+echo "gherlein:none" | chpasswd
+# change to allow sudo in the install scripts
+echo "gherlein ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers 
 su -c 'cd ~gherlein;git clone https://github.com/gherlein/gch' gherlein
 su -c 'cd ~gherlein/gch/;./install' gherlein
-
+# change it back for safety later
+#sed -i.bak '/gherlein/d' /etc/sudoers
+#su -c 'echo "~/keychain/keychain --eval --agents ssh gherlein-ec2.pem >> ~/.bash_profile"' gherlein 
