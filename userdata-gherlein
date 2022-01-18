@@ -1,6 +1,7 @@
 useradd gherlein
 usermod -G wheel gherlein
 echo "gherlein:none" | chpasswd
+yum install -y emacs-nox
 # change to allow sudo in the install scripts
 echo "gherlein ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers 
 su -c 'cd ~gherlein;git clone https://github.com/gherlein/gch' gherlein
