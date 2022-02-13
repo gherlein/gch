@@ -8,4 +8,5 @@ su -c 'cd ~gherlein;git clone https://github.com/gherlein/gch' gherlein
 su -c 'cd ~gherlein/gch/;./install' gherlein
 # change it back for safety later
 sed -i.bak '/gherlein/d' /etc/sudoers
-su -c 'echo "~/keychain/keychain --eval --agents ssh gherlein-ec2.pem >> ~/.bash_profile"' gherlein 
+su -c 'echo "~/keychain/keychain --eval --agents ssh gherlein-ec2.pem >> ~/.bash_profile"' gherlein
+su -c 'echo "ssh-add ~/keys/gherlein-ec2.pem >> ~/.bash_profile"' gherlein

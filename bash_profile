@@ -68,6 +68,7 @@ fi
 
 # AWS Tools
 export PATH=$PATH:~/.toolbox/bin
+export AWS_PROFILE=default
 
 # prompt
 PS1="\h:\w> "
