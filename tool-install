@@ -55,3 +55,6 @@ git clone https://github.com/gherlein/elisp
 cd elisp
 ./install.sh
 popd
+
+# install direnv
+curl -sfL https://direnv.net/install.sh | bash

@@ -1,6 +1,7 @@
 useradd gherlein
 usermod -G wheel gherlein
 echo "gherlein:none" | chpasswd
+usermod -a -G docker gherlein
 yum install -y emacs-nox
 # change to allow sudo in the install scripts
 echo "gherlein ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers 
