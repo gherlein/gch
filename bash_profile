@@ -73,3 +73,5 @@ export AWS_PROFILE=default
 # prompt
 PS1="\h:\w> "
 
+eval "$(direnv hook bash)"
+
