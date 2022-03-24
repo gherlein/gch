@@ -10,6 +10,15 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
      sudo apt-get install -y apt-transport-https
      sudo apt-get install -y unzip
      sudo apt-get install -y gnome-screensaver
+  elif [  -n "$(uname -a | grep Debian)" ]; then
+     sudo apt-get update
+     sudo apt-get install -y git
+     sudo apt-get install -y build-essential
+     sudo apt-get install -y direnv
+     sudo apt-get install -y emacs-nox 
+     sudo apt-get install -y linuxbrew-wrapper
+     sudo apt-get install -y apt-transport-https
+     sudo apt-get install -y unzip
   else
      sudo yum update
      sudo yum install -y git
