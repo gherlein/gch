@@ -20,7 +20,12 @@ if ps -p $SSH_AGENT_PID > /dev/null
 then
    echo "ssh-agent is already running"
 else
-   eval `~/keychain/keychain --eval --agents ssh id_rsa`
+   if [ x$DISPLAY != x ] ; then
+      cat "graphical" >> logins
+   else
+      cat "terminal" >> logins
+      eval `~/keychain/keychain --eval --agents ssh id_rsa`
+   fi
 fi
 
 # My colors
@@ -50,21 +55,6 @@ eval "$(direnv hook bash)"
 # python
 alias pip="pip3"
 alias python=python3
-
-# ruby
-export PATH=$PATH:/usr/local/lib/ruby/gems/3.0.0/bin
-
-# java
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
-
-# esptool
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-   echo $OSTYPE
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-   echo	$OSTYPE
-   export PATH=$PATH:~/Library/Python/3.8/bin
-   echo $PATH
-fi
 
 # AWS Tools
 export PATH=$PATH:~/.toolbox/bin
