@@ -75,3 +75,4 @@ PS1="\h:\w> "
 
 eval "$(direnv hook bash)"
 
+export EDITOR=emacs
