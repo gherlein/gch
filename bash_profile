@@ -44,6 +44,7 @@ export PATH="$PATH:$HOME/bin"
 # gloang
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+go env -w GOPRIVATE=*
 
 # PlatformIO
 export PATH=$PATH:~/.platformio/penv/bin
