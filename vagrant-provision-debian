@@ -1,0 +1,10 @@
+apt install -y git sudo emacs-nox curl
+useradd -m -s /usr/bin/bash gherlein
+echo "gherlein:none" | chpasswd
+usermod -G sudo gherlein
+usermod -G sudo vagrant
+su -c 'cd ~gherlein;git clone https://github.com/gherlein/gch' gherlein
+su -c 'cd ~gherlein/gch/;./install' gherlein
+su -c 'echo "~/keychain/keychain --eval --agents ssh gherlein-ec2.pem >> ~/.bash_profile"' gherlein
+su -c 'echo "ssh-add ~/keys/gherlein-ec2.pem >> ~/.bash_profile"' gherlein
+
