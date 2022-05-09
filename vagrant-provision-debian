@@ -1,4 +1,4 @@
-apt install -y git sudo emacs-nox curl
+apt install -y git sudo emacs-nox curl usbutils
 useradd -m -s /usr/bin/bash gherlein
 echo "gherlein:none" | chpasswd
 usermod -G sudo gherlein
