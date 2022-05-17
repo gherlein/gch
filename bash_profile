@@ -67,3 +67,6 @@ PS1="\h:\w> "
 eval "$(direnv hook bash)"
 
 export EDITOR=emacs
+
+# add Postgres CLI to path
+export PATH=$PATH:/usr/local/opt/libpq/bin
