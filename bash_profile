@@ -20,11 +20,10 @@ if ps -p $SSH_AGENT_PID > /dev/null
 then
    echo "ssh-agent is already running"
 else
-   if [ x$DISPLAY != x ] ; then
-      cat "graphical" >> logins
-   else
-      cat "terminal" >> logins
+   if [[ x$SSH_CLIENT != x ]] ; then
       eval `~/keychain/keychain --eval --agents ssh id_rsa`
+   else
+      echo "graphical login" > ~/logins
    fi
 fi
 
@@ -49,6 +48,9 @@ go env -w GOPRIVATE=*
 # PlatformIO
 export PATH=$PATH:~/.platformio/penv/bin
 export IDF_PATH=~/esp/esp-idf
+
+# ESP IDF
+alias get_idf='. $HOME/esp/esp-idf/export.sh'
 
 # direenv
 eval "$(direnv hook bash)"
