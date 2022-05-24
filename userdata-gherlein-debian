@@ -1,0 +1,23 @@
+apt install -y emacs-nox curl sudo git
+# change to allow sudo in the install scripts
+echo "gherlein ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers 
+su -c 'cd ~gherlein;git clone https://github.com/gherlein/gch' gherlein
+su -c 'cd ~gherlein/gch/;./install' gherlein
+# change it back for safety later
+sed -i.bak '/gherlein/d' /etc/sudoers
+# now make it just normal sudo access
+echo "gherlein ALL=(ALL)       ALL" >> /etc/sudoers 
+# install go 1.18
+wget https://go.dev/dl/go1.18.linux-amd64.tar.gz
+su -c 'rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.linux-amd64.tar.gz'
+rm go1.18.linux-amd64.tar.gz
+# install docker
+apt install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+apt update
+apt-cache policy docker-ce
+apt install -y docker-ce
+systemctl status docker
+usermod -a -G docker gherlein
+

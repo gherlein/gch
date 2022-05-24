@@ -1,3 +1,4 @@
+#  mwinit -s --aea -o
 curl -sS -L -c ~/.midway/cookie -b ~/.midway/cookie https://phonetool.amazon.com/users/$1.json
 
 
