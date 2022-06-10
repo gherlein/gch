@@ -1,2 +1,4 @@
+*.deb
+*.tgz
 github-token
 *~
