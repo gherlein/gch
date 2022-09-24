@@ -38,7 +38,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 # local bin
-export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/bin:/usr/local/bin"
 
 # gloang
 export GOPATH=$HOME/go
@@ -60,15 +60,13 @@ alias pip="pip3"
 alias python=python3
 
 # AWS Tools
-export PATH=$PATH:~/.toolbox/bin
 export AWS_PROFILE=default
 
 # prompt
 PS1="\h:\w> "
 
-eval "$(direnv hook bash)"
-
 export EDITOR=emacs
 
-# add Postgres CLI to path
-export PATH=$PATH:/usr/local/opt/libpq/bin
+# Java
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
