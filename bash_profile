@@ -2,6 +2,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   alias open="xdg-open"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
      alias top="top -o cpu"
+     alias draw.io='/Applications/draw.io.app/Contents/MacOS/draw.io'
 elif [[ "$OSTYPE" == "cygwin" ]]; then
   echo
 elif [[ "$OSTYPE" == "msys" ]]; then
