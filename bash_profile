@@ -75,3 +75,12 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# cmake
+export PATH=$PATH://Applications/CMake.app/Contents/bin
+
+# BrightSign Players
+export XC5="XAE287000021"
+export XD5="M4C28N000108"
+export XD4="TWE24U002181"
+export XT4="D7E993001947"
