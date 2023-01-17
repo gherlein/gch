@@ -1,0 +1,14 @@
+export AWS_TOKEN_ARN=$(aws iam list-mfa-devices | jq -r .MFADevices[0].SerialNumber)
+echo "Using $AWS_TOKEN_ARN"
+export AWS_SESSION_TOKEN=''
+aws sts get-session-token --serial-number $AWS_TOKEN_ARN --token-code $1 > /tmp/.token
+export AWS_ACCESS_KEY_ID=$(cat /tmp/.token | jq -r .Credentials.AccessKeyId)
+export AWS_SECRET_ACCESS_KEY=$(cat /tmp/.token | jq -r .Credentials.SecretAccessKey)
+export AWS_SESSION_TOKEN=$(cat /tmp/.token | jq -r .Credentials.SessionToken)
+echo "export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID" > /tmp/mfa
+echo "export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY" >> /tmp/mfa
+echo "export AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN" >> /tmp/mfa
+rm /tmp/.token
+echo "now source /tmp/mfa"
+
+

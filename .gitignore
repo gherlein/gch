@@ -1,4 +1,6 @@
+aws
 *.deb
 *.tgz
+*.zip
 github-token
 *~
