@@ -1,24 +1,39 @@
+#!/bin/bash 
+exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
 useradd gherlein
 usermod -G wheel gherlein
 echo "gherlein:none" | chpasswd
 usermod -a -G docker gherlein
-sudo amazon-linux-extras enable corretto8
-sudo yum install -y java-1.8.0-amazon-corretto
-yum install -y emacs-nox
+# install some key things
+sudo yum install -y emacs-nox git 
+sudo yum install -y gcc-c++ make 
+curl -sL https://rpm.nodesource.com/setup_19.x | sudo -E bash - 
+sudo yum install -y nodejs 
+# direnv
+curl -sfL https://direnv.net/install.sh | bash
+# setup desired user
+mkdir -p ~gherlein/.ssh
+touch ~gherlein/.ssh/authorized_keys
+curl https://github.com/gherlein.keys >> ~gherlein/.ssh/authorized_keys
+chown gherlein  ~gherlein/.ssh/authorized_keys
+chmod 400 ~gherlein/.ssh/authorized_keys
 # change to allow sudo in the install scripts
 echo "gherlein ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers 
+# install user specific tools
 su -c 'cd ~gherlein;git clone https://github.com/gherlein/gch' gherlein
 su -c 'cd ~gherlein/gch/;./install' gherlein
 # change it back for safety later
 sed -i.bak '/gherlein/d' /etc/sudoers
 su -c 'echo "~/keychain/keychain --eval --agents ssh gherlein-ec2.pem >> ~/.bash_profile"' gherlein
-su -c 'echo "ssh-add ~/keys/gherlein-ec2.pem >> ~/.bash_profile"' gherlein
-# install go 1.18
-wget https://go.dev/dl/go1.18.linux-amd64.tar.gz
-su -c 'rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.linux-amd64.tar.gz'
+# install go
+wget https://go.dev/dl/go1.20.1.linux-amd64.tar.gz
+su -c 'rm -rf /usr/local/go && tar -C /usr/local -xzf go1.*tar.gz'
 # install docker
-su -c 'sudo amazon-linux-extras install docker'
 su -c 'sudo yum install docker'
 su -c 'sudo service docker start && sudo systemctl enable docker'
 su -c 'sudo usermod -a -G docker gherlein'
+# sshd
+sed 's/PasswordAuthentication no/PasswordAuthentication yes/' -i /etc/ssh/sshd_config
+systemctl restart sshd
+service sshd restart
 

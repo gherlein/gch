@@ -3,6 +3,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 elif [[ "$OSTYPE" == "darwin"* ]]; then
      alias top="top -o cpu"
      alias draw.io='/Applications/draw.io.app/Contents/MacOS/draw.io'
+     export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 elif [[ "$OSTYPE" == "cygwin" ]]; then
   echo
 elif [[ "$OSTYPE" == "msys" ]]; then
@@ -62,6 +63,8 @@ alias python=python3
 
 # AWS Tools
 export AWS_PROFILE=default
+alias ssologin='aws sso login --profile login'
+
 
 # prompt
 PS1="\h:\w> "
@@ -84,3 +87,8 @@ export XC5="XAE287000021"
 export XD5="M4C28N000108"
 export XD4="TWE24U002181"
 export XT4="D7E993001947"
+
+# Projen
+alias pj='npx projen'
+
+

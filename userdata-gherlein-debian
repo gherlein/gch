@@ -1,4 +1,21 @@
+#!/bin/bash 
+function setup_hostname() {
+    hostnamectl set-hostname ${hostname}
+    echo $(curl http://169.254.169.254/latest/meta-data/local-ipv4) ${hostname} >> /etc/hosts
+    echo $(curl http://169.254.169.254/latest/meta-data/local-ipv4) ${hostname} >> /etc/cloud/templates/hosts.debian.tmpl
+}
+setup_hostname
+#
+sudo useradd -m gherlein -s /bin/bash
+apt update
 apt install -y emacs-nox curl sudo git
+KEYDIR="~gherlein/.ssh"
+KEY="$KEYDIR/gherlein.pub"
+chown gherlein.gherlein $KEYDIR
+cat << EOF > $KEY
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDa1nkoPL1EJ/C0st9o6k73S2jZthdaGT3sXjMQGig/Rhzme4fyAUzYcTQPZoUe9kM7AmWfdV+zO1mNrjgx2Nc+po6BRlbHwDAr5FGVT7mxu5byIZ1+P4TGTSzsHYtQCKkjRtEMogwnqYFTu9fFqPNMuvkrFOupx8v99wYvl3KKrhuT2mYT/B0MgVxv221JPIHiGk3FfsGEPXEynXubF5LY6ssaAVZt+tIWRA+Rj7Z2hRZFTh/Bezi9JcHLKazLnlNHVBdgRGrUuXGelGSArlAEA/S9bYkwjYRSRSIGEkBBIMNTlTZWr5UPGDPZPHZVBx4QAcot4Hb40jbc1vBVzf3phkO2inntGKAB5WbSTJkU7gm2p0xI4O2jqEigcD1Z1oQnpMzQOqP/Qzfu/Ogk3aIqkg3N2Qxp3M7YGc0YhGXPoNArYVteNRlOkC9IXxCJ+9Me0/EF2nEm57PcAMP++tVfcq2m6l/pllnbiE3bLUgq7gl1bVCGhWSV8AM4gjEXeknG4O/Q0T0JnbOdZv0PSzx8xhuOAh+E6EO7TD/qbK5rwUWX+cmKP5eK8o79vQonE8dZH5KuKTJbKMMDItG0hb9bRqX09Lu18aqxEYeBz+FbAUupe3cZG4tmCne6MPxFSUXnAu55fJdFSIkAEVAvHwWmbPf7CViOyoN/02iSi1ysyw== gherlein@gherlein-MBP.local
+EOF
+chmod 400 $KEY
 # change to allow sudo in the install scripts
 echo "gherlein ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers 
 su -c 'cd ~gherlein;git clone https://github.com/gherlein/gch' gherlein
@@ -8,9 +25,9 @@ sed -i.bak '/gherlein/d' /etc/sudoers
 # now make it just normal sudo access
 echo "gherlein ALL=(ALL)       ALL" >> /etc/sudoers 
 # install go 1.18
-wget https://go.dev/dl/go1.18.linux-amd64.tar.gz
-su -c 'rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.linux-amd64.tar.gz'
-rm go1.18.linux-amd64.tar.gz
+#wget https://go.dev/dl/go1.18.linux-amd64.tar.gz
+#su -c 'rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.linux-amd64.tar.gz'
+#rm go1.18.linux-amd64.tar.gz
 # install docker
 apt install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
