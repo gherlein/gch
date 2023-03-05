@@ -91,4 +91,7 @@ export XT4="D7E993001947"
 # Projen
 alias pj='npx projen'
 
+# pnpm
+export PNPM_HOME="/home/gherlein/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
 
