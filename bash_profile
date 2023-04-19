@@ -22,11 +22,7 @@ if ps -p $SSH_AGENT_PID > /dev/null 2>&1
 then
    echo "ssh-agent is already running"
 else
-   if [[ x$SSH_CLIENT != x ]] ; then
-      eval `~/keychain/keychain --eval --agents ssh id_rsa`
-   else
-      echo "graphical login" > ~/logins
-   fi
+   eval `~/keychain/keychain --eval --agents ssh id_rsa`
 fi
 
 # My colors
