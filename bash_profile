@@ -17,13 +17,17 @@ else
 fi
 
 # SSH 
-SSH_ENV="$HOME/.ssh/environment"
-if ps -p $SSH_AGENT_PID > /dev/null 2>&1
-then
-   echo "ssh-agent is already running"
-else
-   eval `~/keychain/keychain --eval --agents ssh id_rsa`
-fi
+#SSH_ENV="$HOME/.ssh/environment"
+#if ps -p $SSH_AGENT_PID > /dev/null 2>&1
+#then
+#   echo "ssh-agent is already running"
+#else
+#   eval `~/keychain/keychain --eval --agents ssh id_rsa`
+#fi
+
+# new SSH keychain
+/usr/bin/keychain $HOME/.ssh/gherlein
+source $HOME/.keychain/$HOSTNAME-sh
 
 # My colors
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -82,7 +86,11 @@ export PATH=$PATH://Applications/CMake.app/Contents/bin
 export XC5="XAE287000021"
 export XD5="M4C28N000108"
 export XD4="TWE24U002181"
-export XT4="D7E993001947"
+#
+export XD4A="D7E91R006594"
+export XD4B="D7E86L002782"
+export XD4C="D7E993001947"
+export XD4D="D7E94P002584"
 
 # Projen
 alias pj='npx projen'
