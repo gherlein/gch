@@ -63,6 +63,7 @@ fi
 pushd .
 cd ~
 git clone https://github.com/funtoo/keychain
+sudo cp ~/keychain/keychain /usr/bin
 popd
 
 
