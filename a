@@ -1,0 +1,4 @@
+if [ -n "$DISPLAY" ]  
+then
+  echo GRAPHICAL
+fi

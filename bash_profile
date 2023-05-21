@@ -17,13 +17,18 @@ else
 fi
 
 # SSH 
-#SSH_ENV="$HOME/.ssh/environment"
-#if ps -p $SSH_AGENT_PID > /dev/null 2>&1
-#then
-#   echo "ssh-agent is already running"
-#else
-#   eval `~/keychain/keychain --eval --agents ssh id_rsa`
-#fi
+SSH_ENV="$HOME/.ssh/environment"
+if ps -p $SSH_AGENT_PID > /dev/null 2>&1
+then
+   echo "ssh-agent is already running"
+else
+   if [ -n "$DISPLAY" ]
+   then
+	echo GRAPHICAL
+   else
+        eval `~/keychain/keychain --eval --agents ssh id_rsa`
+   fi
+fi
 
 # new SSH keychain
 /usr/bin/keychain $HOME/.ssh/gherlein
