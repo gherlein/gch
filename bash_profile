@@ -17,7 +17,21 @@ else
 fi
 
 # SSH 
-SSH_ENV="$HOME/.ssh/environment"
+if [ -n "$DISPLAY" ]
+then
+	echo GRAPHICAL
+else
+	SSH_ENV="$HOME/.ssh/environment"
+	if ps -p $SSH_AGENT_PID > /dev/null 2>&1
+	then
+		echo "ssh-agent is already running"
+	else
+		eval `~/keychain/keychain --eval --agents ssh id_rsa`
+	fi
+fi
+
+
+
 if ps -p $SSH_AGENT_PID > /dev/null 2>&1
 then
    echo "ssh-agent is already running"
