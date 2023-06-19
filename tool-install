@@ -77,3 +77,7 @@ popd
 
 # install direnv
 curl -sfL https://direnv.net/install.sh | bash
+
+# install tiny-go
+wget https://github.com/tinygo-org/tinygo/releases/download/v0.28.1/tinygo_0.28.1_amd64.deb
+sudo dpkg -i tinygo_0.28.1_amd64.deb
