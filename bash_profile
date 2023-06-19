@@ -123,3 +123,4 @@ export PATH="$PNPM_HOME:$PATH"
 
 # gerrit
 alias gerrit='ssh -p 29418 $USER@cam-gerrit.brightsign.info gerrit'
+cd
