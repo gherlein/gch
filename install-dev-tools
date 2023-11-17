@@ -1,4 +1,27 @@
 #! /bin/bash -x
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    echo "installing..."
+elif [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
+    echo "installing..."
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    echo "unsupported OS"
+    exit
+elif [[ "$OSTYPE" == "cygwin" ]]; then
+    echo "unsupported OS"
+    exit
+elif [[ "$OSTYPE" == "msys" ]]; then
+    echo "unsupported OS"
+    exit
+elif [[ "$OSTYPE" == "win32" ]]; then
+    echo "unsupported OS"
+    exit
+elif [[ "$OSTYPE" == "freebsd"* ]]; then
+    echo "unsupported OS"
+    exit
+else
+    echo "unsupported OS"
+    exit
+fi
 # install critial tools
 sudo apt update
 sudo apt remove -y awscli # remove v1 to make way to install v2
@@ -26,7 +49,8 @@ nvm install 16
 nvm use 16
 npm install -g npm nodejs typescript aws-sdk aws-cdk yarn
 #
-wget https://go.dev/dl/go1.20.4.linux-amd64.tar.gz
+#wget https://go.dev/dl/go1.20.4.linux-amd64.tar.gz
+wget https://go.dev/dl/go1.21.4.linux-amd64.tar.gz
 sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.*amd64.tar.gz
 go version
 rm go1*gz
