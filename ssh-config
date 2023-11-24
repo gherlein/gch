@@ -1,6 +1,42 @@
+Host github.com
+  Hostname ssh.github.com
+  Port 443
+
 Host *
   IgnoreUnknown UseKeychain
   UseKeychain yes
   AddKeysToAgent yes
   IdentityFile ~/.ssh/id_rsa
   ServerAliveInterval 60
+  ServerAliveCountMax 5
+
+Host cam-gerrit.brightsign.info
+   HostkeyAlgorithms +ssh-rsa
+   PubkeyAcceptedAlgorithms +ssh-rsa
+
+Host gerrit.brightsign.biz
+     User gherlein
+
+Host builder
+    HostName 18.214.125.23
+
+Host xt1144a
+   User brightsign
+   HostkeyAlgorithms +ssh-rsa
+   PubkeyAcceptedAlgorithms +ssh-rsa
+
+Host xt1145a
+   User brightsign
+   HostkeyAlgorithms +ssh-rsa
+   PubkeyAcceptedAlgorithms +ssh-rsa
+
+Host ls445a
+   User brightsign
+   HostkeyAlgorithms +ssh-rsa
+   PubkeyAcceptedAlgorithms +ssh-rsa
+
+Host ls445b
+   User brightsign
+   HostkeyAlgorithms +ssh-rsa
+   PubkeyAcceptedAlgorithms +ssh-rsa
+
