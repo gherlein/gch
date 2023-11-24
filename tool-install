@@ -1,3 +1,4 @@
+rm go*
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   if [  -n "$(uname -a | grep Ubuntu)" ]; then
      sudo apt-get update
@@ -17,7 +18,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
      sudo apt-get install -y apt-transport-https
      sudo apt-get install -y unzip
      wget https://go.dev/dl/go1.21.4.linux-amd64.tar.gz
-     sudo 'rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.linux-amd64.tar.gz'
+     sudo 'rm -rf /usr/local/go && tar -C /usr/local -xzf go1.21.4.linux-amd64.tar.gz'
      sudo apt-get remove docker docker-engine docker.io containerd runc
      sudo apt install apt-transport-https ca-certificates curl gnupg lsb-release -y
      curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
@@ -57,7 +58,7 @@ fi
 # install keychain
 pushd .
 cd ~
-git clone https://github.com/funtoo/keychain
+git clone git@github.com:funtoo/keychain.git
 sudo cp ~/keychain/keychain /usr/bin
 popd
 
@@ -65,11 +66,12 @@ popd
 # install emacs stuff
 pushd .
 cd ~
-git clone https://github.com/gherlein/elisp
+git clone git@github.com:gherlein/elisp.git
 cd elisp
 ./install.sh
 popd
 
 # install direnv
+export bin_path=~/bin
 curl -sfL https://direnv.net/install.sh | bash
 

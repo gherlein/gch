@@ -4,3 +4,4 @@ aws
 *.zip
 github-token
 *~
+go*
