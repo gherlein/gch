@@ -18,7 +18,8 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
      sudo apt-get install -y apt-transport-https
      sudo apt-get install -y unzip
      wget https://go.dev/dl/go1.21.4.linux-amd64.tar.gz
-     sudo 'rm -rf /usr/local/go && tar -C /usr/local -xzf go1.21.4.linux-amd64.tar.gz'
+     sudo rm -rf /usr/local/go
+     sudo tar -C /usr/local -xzf go1.21.4.linux-amd64.tar.gz
      sudo apt-get remove docker docker-engine docker.io containerd runc
      sudo apt install apt-transport-https ca-certificates curl gnupg lsb-release -y
      curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
