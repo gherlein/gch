@@ -1,3 +1,4 @@
+alias ls='ls -GH' 
 alias top="top -o cpu"
 alias draw.io='/Applications/draw.io.app/Contents/MacOS/draw.io'
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
