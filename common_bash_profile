@@ -41,3 +41,6 @@ export LS4="27C327000074"
 # gerrit
 alias gerrit='ssh -p 29418 $USER@cam-gerrit.brightsign.info gerrit'
 cd
+
+# rust
+source "$HOME/.cargo/env"
