@@ -1,7 +1,7 @@
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   sudo apt install -y emacs-nox git curl
   echo 'source ~/gch/linux_bash_profile' > ~/.bash_profile
-  echo 'source ~/gch/common_bash_profile' > ~/.bash_profile
+  echo 'source ~/gch/common_bash_profile'>> ~/.bash_profile
   mkdir ~/.ssh
   curl https://github.com/gherlein.keys > ~/.ssh/authorized_keys 
   cat ~/gch/ssh-config > ~/.ssh/config
@@ -9,13 +9,13 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 elif [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
   sudo apt install -y emacs-nox git curl
   echo 'source ~/gch/linux_bash_profile' > ~/.bash_profile
-  echo 'source ~/gch/common_bash_profile' > ~/.bash_profile
+  echo 'source ~/gch/common_bash_profile' >> ~/.bash_profile
   mkdir ~/.ssh
   curl https://github.com/gherlein.keys > ~/.ssh/authorized_keys 
   cat ~/gch/ssh-config > ~/.ssh/config
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   echo 'source ~/gch/macos_bash_profile' > ~/.bash_profile
-  echo 'source ~/gch/common_bash_profile' > ~/.bash_profile
+  echo 'source ~/gch/common_bash_profile' >> ~/.bash_profile
   mkdir ~/.ssh
   curl https://github.com/gherlein.keys > ~/.ssh/authorized_keys 
   ssh-add -K ~/.ssh/id_rsa
