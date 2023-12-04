@@ -31,6 +31,6 @@ else
 fi
 
 # new SSH keychain
-/usr/bin/keychain $HOME/.ssh/gherlein
-source $HOME/.keychain/$HOSTNAME-sh
+#/usr/bin/keychain $HOME/.ssh/gherlein
+#source $HOME/.keychain/$HOSTNAME-sh
 

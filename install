@@ -1,19 +1,19 @@
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   echo 'source ~/gch/linux_bash_profile' > ~/.bash_profile
-  echo 'source ~/gch/common_bash_profile' > ~/.bash_profile
+  echo 'source ~/gch/common_bash_profile'>> ~/.bash_profile
   mkdir ~/.ssh
   curl https://github.com/gherlein.keys > ~/.ssh/authorized_keys 
   cat ~/gch/ssh-config > ~/.ssh/config
   cp screenrc ~/.screenrc
 elif [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
   echo 'source ~/gch/linux_bash_profile' > ~/.bash_profile
-  echo 'source ~/gch/common_bash_profile' > ~/.bash_profile
+  echo 'source ~/gch/common_bash_profile' >> ~/.bash_profile
   mkdir ~/.ssh
   curl https://github.com/gherlein.keys > ~/.ssh/authorized_keys 
   cat ~/gch/ssh-config > ~/.ssh/config
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   echo 'source ~/gch/macos_bash_profile' > ~/.bash_profile
-  echo 'source ~/gch/common_bash_profile' > ~/.bash_profile
+  echo 'source ~/gch/common_bash_profile' >> ~/.bash_profile
   mkdir ~/.ssh
   curl https://github.com/gherlein.keys > ~/.ssh/authorized_keys 
   ssh-add -K ~/.ssh/id_rsa
