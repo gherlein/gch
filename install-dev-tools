@@ -57,6 +57,7 @@ sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.*amd64.tar.gz
 go version
 rm go1*gz
 sudo apt  install protobuf-compiler 
+sudo apt install -y protoc-gen-go protoc-gen-go-grpc
 
 
 
