@@ -44,4 +44,3 @@ alias gerrit='ssh -p 29418 $USER@cam-gerrit.brightsign.info gerrit'
 # go home
 cd
 
->>>>>>> c914913 (updated golang)
