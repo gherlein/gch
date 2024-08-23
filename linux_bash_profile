@@ -34,3 +34,7 @@ fi
 #/usr/bin/keychain $HOME/.ssh/gherlein
 #source $HOME/.keychain/$HOSTNAME-sh
 
+# handle MOSH
+tput rmcup
+
+
