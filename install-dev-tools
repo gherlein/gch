@@ -31,11 +31,17 @@ ARCH="$(dpkg --print-architecture)"
 echo "Downloading $ARCH"
 if [[ "$ARCH" == "arm64" ]]; then
     GOLOC="https://go.dev/dl/go1.23.1.linux-arm64.tar.gz"
+    TGOLOC="https://github.com/tinygo-org/tinygo/releases/download/v0.33.0/tinygo_0.33.0_armhf.deb"
 elif [[ "$ARCH" == "amd64" ]]; then
     GOLOC="https://go.dev/dl/go1.23.1.darwin-amd64.pkg"
+    TGOLOC="https://github.com/tinygo-org/tinygo/releases/download/v0.33.0/tinygo_0.33.0_amd64.deb" 
 fi
 sudo apt-get remove golang-go
 sudo apt-get remove --auto-remove golang-go
+wget $TGOLOC
+sudo dpkg -i ./tinygo*deb
+rm tinygo*deb
+sudo apt install libstdc++6:armhf
 wget $GOLOC
 sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go*tar.gz
 go version
