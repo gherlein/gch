@@ -24,13 +24,13 @@ else
 fi
 # install critial tools
 sudo apt update
-#sudo apt remove -y awscli # remove v1 to make way to install v2
 sudo apt install -y expect jq curl git
 
 # install go
 ARCH="$(dpkg --print-architecture)"
+echo "Downloading $ARCH"
 if [[ "$ARCH" == "arm64" ]]; then
-    GOLOC="https://go.dev/dl/go1.23.1.darwin-arm64.tar.gz"
+    GOLOC="https://go.dev/dl/go1.23.1.linux-arm64.tar.gz"
 elif [[ "$ARCH" == "amd64" ]]; then
     GOLOC="https://go.dev/dl/go1.23.1.darwin-amd64.pkg"
 fi
