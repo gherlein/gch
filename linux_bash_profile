@@ -37,4 +37,8 @@ fi
 # handle MOSH
 tput rmcup
 
+# do an extra clear
+sleep 1
+clear
+
 
