@@ -7,6 +7,10 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   cat ~/gch/ssh-config > ~/.ssh/config
   cp screenrc ~/.screenrc
   sudo apt install -y tput
+  sudo apt autoremove --purge snapd
+  sudo apt-mark hold snapd
+  sudo apt install gnome-software --no-install-recommends
+  sudo add-apt-repository ppa:mozillateam/ppa
 elif [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
   sudo apt install -y emacs-nox git curl
   echo 'source ~/gch/linux_bash_profile' > ~/.bash_profile

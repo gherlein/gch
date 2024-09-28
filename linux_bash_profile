@@ -35,6 +35,8 @@ fi
 #source $HOME/.keychain/$HOSTNAME-sh
 
 # handle MOSH
-tput rmcup
+#tput rmcup
+
+clear
 
 
