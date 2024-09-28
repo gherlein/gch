@@ -39,4 +39,8 @@ fi
 
 clear
 
+# do an extra clear
+sleep 1
+clear
+
 

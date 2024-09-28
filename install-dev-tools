@@ -24,40 +24,30 @@ else
 fi
 # install critial tools
 sudo apt update
-#sudo apt remove -y awscli # remove v1 to make way to install v2
 sudo apt install -y expect jq curl git
-# install AWS CLI
-#wget "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -O "awscliv2.zip"
-#unzip -o awscliv2.zip
-#sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
-rm -Rf aws awscliv2.zip
-# install SAM
-#wget https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip -O sam.zip
-#unzip sam.zip -o -d sam-installation
-#sudo ./sam-installation/install
-#sam --version
-#rm -Rf ./sam-installation sam.zip
-# install NVM
-#curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-#cat << "EOF" >> $HOME/.profile
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loa#ds nvm bash_completion
-#EOF
-#source ~/.profile
-#nvm install 16
-#nvm use 16
-#npm install -g npm nodejs typescript aws-sdk aws-cdk yarn
-#
-# remove old Ubuntu installation 
+
+# install go
+ARCH="$(dpkg --print-architecture)"
+echo "Downloading $ARCH"
+if [[ "$ARCH" == "arm64" ]]; then
+    GOLOC="https://go.dev/dl/go1.23.1.linux-arm64.tar.gz"
+    TGOLOC="https://github.com/tinygo-org/tinygo/releases/download/v0.33.0/tinygo_0.33.0_armhf.deb"
+elif [[ "$ARCH" == "amd64" ]]; then
+    GOLOC="https://go.dev/dl/go1.23.1.darwin-amd64.pkg"
+    TGOLOC="https://github.com/tinygo-org/tinygo/releases/download/v0.33.0/tinygo_0.33.0_amd64.deb" 
+fi
 sudo apt-get remove golang-go
 sudo apt-get remove --auto-remove golang-go
-wget https://go.dev/dl/go1.23.0.linux-amd64.tar.gz
-sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.*amd64.tar.gz
+wget $TGOLOC
+sudo dpkg -i ./tinygo*deb
+rm tinygo*deb
+sudo apt install libstdc++6:armhf
+wget $GOLOC
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go*tar.gz
 go version
-rm go1*gz
-sudo apt  install protobuf-compiler 
-sudo apt install -y protoc-gen-go protoc-gen-go-grpc
+rm go*gz
+sudo apt install -y protobuf-compiler 
+sudo apt install -y protoc-gen-go protoc-gen-go
 
 
 
