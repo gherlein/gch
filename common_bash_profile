@@ -2,9 +2,13 @@
 export PATH="$PATH:$HOME/bin:/usr/local/bin"
 
 # gloang
+export GOBIN=$(which go)
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-go env -w GOPRIVATE=*
+if [ "${GOBIN}" ]
+then
+  go env -w GOPRIVATE=*
+fi
 
 # direenv
 eval "$(direnv hook bash)"
@@ -18,7 +22,6 @@ export AWS_PROFILE=default
 alias ssologin='aws sso login --profile login'
 
 # prompt
-#PS1="\h:\w> "
 if [ $(id -u) -ne 0 ]
 then
   PS1="\h:\w> "
@@ -26,6 +29,17 @@ else
   PS1="\e[1;31m[\u@\h \W]\$ \e[0m>"
 fi
 
+# emacs stuff
+export EMACSBIN=$(which emacs)
+alias emacs="emacsclient -nw -c"
+export DAEMON=$(ps -e -o args | grep -i 'emacs' | grep 'daemon')
+#echo $DAEMON
+if [ "${DAEMON}" ]
+then
+  echo "emacs daemon is running"
+else
+  echo "Starting emacs daemon...";$EMACSBIN --daemon
+fi
 export EDITOR=emacs
 
 # Java
