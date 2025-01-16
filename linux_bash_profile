@@ -34,8 +34,9 @@ fi
 #/usr/bin/keychain $HOME/.ssh/gherlein
 #source $HOME/.keychain/$HOSTNAME-sh
 
-# handle MOSH
-#tput rmcup
+# platformio
+export PATH=$PATH:/home/gherlein/.platformio/penv/bin
+
 
 clear
 
@@ -43,4 +44,5 @@ clear
 sleep 1
 clear
 
-
+# pipx
+export PATH=$PATH:/home/gherlein/.local/bin
