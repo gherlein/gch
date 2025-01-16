@@ -18,7 +18,13 @@ export AWS_PROFILE=default
 alias ssologin='aws sso login --profile login'
 
 # prompt
-PS1="\h:\w> "
+#PS1="\h:\w> "
+if [ $(id -u) -ne 0 ]
+then
+  PS1="\h:\w> "
+else
+  PS1="\e[1;31m[\u@\h \W]\$ \e[0m>"
+fi
 
 export EDITOR=emacs
 

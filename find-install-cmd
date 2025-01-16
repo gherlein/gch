@@ -1,4 +1,4 @@
-OSTYPE=`cat /etc/os-release | grep ^ID_LIKE= | cut -f2- -d=`
+OSTYPE=`cat /etc/os-release | grep ^ID= | cut -f2- -d=`
 if grep -q "debian" <<< "$OSTYPE"; then
    CMD="apt install -y"
 fi

@@ -1,18 +1,18 @@
+export INSTALL=$(./find-install-cmd)
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-  sudo apt install -y emacs-nox git curl
+  sudo $INSTALL  emacs-nox git curl gnome-software --no-install-recommends
   echo 'source ~/gch/linux_bash_profile' > ~/.bash_profile
   echo 'source ~/gch/common_bash_profile'>> ~/.bash_profile
   mkdir ~/.ssh
   curl https://github.com/gherlein.keys > ~/.ssh/authorized_keys 
   cat ~/gch/ssh-config > ~/.ssh/config
   cp screenrc ~/.screenrc
-  sudo apt install -y tput
   sudo apt autoremove --purge snapd
-  sudo apt-mark hold snapd
-  sudo apt install gnome-software --no-install-recommends
-  sudo add-apt-repository ppa:mozillateam/ppa
+#  sudo apt-mark hold snapd
+#  sudo apt install gnome-software --no-install-recommends
+#  sudo add-apt-repository ppa:mozillateam/ppa
 elif [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
-  sudo apt install -y emacs-nox git curl
+  sudo $INSTALL  emacs-nox git curl gnome-software --no-install-recommends
   echo 'source ~/gch/linux_bash_profile' > ~/.bash_profile
   echo 'source ~/gch/common_bash_profile' >> ~/.bash_profile
   mkdir ~/.ssh
@@ -36,8 +36,7 @@ elif [[ "$OSTYPE" == "freebsd"* ]]; then
 else
   echo
 fi
-~/gch/tool-install
+#~/gch/tool-install
 ~/gch/set-git
-
 mkdir ~/bin
 cp lock unlock aws-whoami ~/bin
