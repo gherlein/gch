@@ -41,7 +41,7 @@ elif [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
    sudo $INSTALL -y git
    sudo $INSTALL -y build-essential
    sudo $INSTALL -y direnv
-   sudo $INSTALL -y emacs25-nox git
+   sudo $INSTALL -y emacs-nox 
    sudo $INSTALL -y apt-transport-https
 elif [[ "$OSTYPE" == "darwin"* ]]; then
    brew install direnv

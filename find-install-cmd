@@ -2,6 +2,9 @@ OSTYPE=`cat /etc/os-release | grep ^ID= | cut -f2- -d=`
 if grep -q "debian" <<< "$OSTYPE"; then
    CMD="apt install -y"
 fi
+if grep -q "ubuntu" <<< "$OSTYPE"; then
+   CMD="apt install -y"
+fi
 if grep -q "rhel" <<< "$OSTYPE"; then
    CMD="yum install -y"
 fi

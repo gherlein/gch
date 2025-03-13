@@ -1,14 +1,14 @@
-# local bin
-export PATH="$PATH:$HOME/bin:/usr/local/bin"
+# local bin
+export PATH="$PATH:$HOME/.local/bin:$HOME/bin:/usr/local/bin"
 
 # gloang
-export GOBIN=$(which go)
-export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-if [ "${GOBIN}" ]
-then
-  go env -w GOPRIVATE=*
-fi
+#export GOBIN=$(which go)
+#export GOPATH=$HOME/go
+#export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+#if [ "${GOBIN}" ]
+#then
+#  go env -w GOPRIVATE=*
+#fi
 
 # direenv
 eval "$(direnv hook bash)"
@@ -18,8 +18,8 @@ alias pip="pip3"
 alias python=python3
 
 # AWS Tools
-export AWS_PROFILE=default
-alias ssologin='aws sso login --profile login'
+#export AWS_PROFILE=default
+#alias ssologin='aws sso login --profile login'
 
 # prompt
 if [ $(id -u) -ne 0 ]
@@ -30,37 +30,42 @@ else
 fi
 
 # emacs stuff
-export EMACSBIN=$(which emacs)
-alias emacs="emacsclient -nw -c"
-export DAEMON=$(ps -e -o args | grep -i 'emacs' | grep 'daemon')
+#export EMACSBIN=$(which emacs)
+#alias emacs="emacsclient -nw -c"
+#export DAEMON=$(ps -e -o args | grep -i 'emacs' | grep 'daemon')
 #echo $DAEMON
-if [ "${DAEMON}" ]
-then
-  echo "emacs daemon is running"
-else
-  echo "Starting emacs daemon...";$EMACSBIN --daemon
-fi
+#if [ "${DAEMON}" ]
+#then
+#  echo "emacs daemon is running"
+#else
+#  echo "Starting emacs daemon...";$EMACSBIN --daemon
+#fi
 export EDITOR=emacs
 
 # Java
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+#export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 # BrightSign Players
-export XC5="XAE287000021"
-export XD5="M4C28N000108"
-export XD4="TWE24U002181"
+#export XC5="XAE287000021"
+#export XD5="M4C28N000108"
+#export XD4="TWE24U002181"
 #
-export XT4A="D7E91R006594"
-export XT4B="D7E86L002782"
-export XT4C="D7E993001947"
-export XT4D="D7E94P002584"
-export XC5A="XCG31L004617"
+#export XT4A="D7E91R006594"
+#export XT4B="D7E86L002782"
+#export XT4C="D7E993001947"
+#export XT4D="D7E94P002584"
+#export XC5A="XCG31L004617"
 #
-export LS4="27C327000074"
+#export LS4="27C327000074"
+
+alias bspf=/home/gherlein/src/brightsign/general-tools/player-control-cli/put-file.sh
+alias bsdf=/home/gherlein/src/brightsign/general-tools/player-control-cli/del-file.sh
+alias bsr=/home/gherlein/src/brightsign/general-tools/player-control-cli/reboot.sh
+alias bssr=/home/gherlein/src/brightsign/general-tools/player-control-cli/set-registry.sh
 
 # gerrit
-alias gerrit='ssh -p 29418 $USER@cam-gerrit.brightsign.info gerrit'
+#alias gerrit='ssh -p 29418 $USER@cam-gerrit.brightsign.info gerrit'
 
 # go home
-cd
+#cd
 
