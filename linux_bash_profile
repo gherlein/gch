@@ -34,3 +34,15 @@ fi
 #/usr/bin/keychain $HOME/.ssh/gherlein
 #source $HOME/.keychain/$HOSTNAME-sh
 
+# platformio
+export PATH=$PATH:/home/gherlein/.platformio/penv/bin
+
+
+clear
+
+# do an extra clear
+sleep 1
+clear
+
+# pipx
+export PATH=$PATH:/home/gherlein/.local/bin

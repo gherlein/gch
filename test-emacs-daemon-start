@@ -1,0 +1,13 @@
+# emacs stuff
+export EMACSBIN=$(which emacs)
+alias emacs="emacsclient -nw -c"
+export DAEMON=$(ps -e -o args | grep -i 'emacs' | grep 'daemon')
+#echo $DAEMON
+if [ "${DAEMON}" ]
+then
+  echo "emacs daemon is running"
+else
+  echo "Starting emacs daemon...";$EMACSBIN --daemon
+fi
+export EDITOR=emacs
+

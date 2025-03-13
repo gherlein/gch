@@ -1,0 +1,16 @@
+sudo apt install -y isc-dhcp-server
+sudo apt install -y bind9
+cd /etc/
+mv bind bind-orig
+mv dhcp dchp-orig
+git clone git@github.com:gherlein/mxdhcp.git
+git clone git@github.com:gherlein/mxbind.git
+mv mxdhcp/ dhcp
+mv mxbind/ bind
+emacs /etc/default/bind9
+# OPTIONS="-u bind -4"
+sudo systemctl restart bind9
+emacs /etc/default/isc-dhcp-server
+# set INTERFACESv4="eth0" (or whatever)
+sudo systemctl restart isc-dhcp-server
+apt install -y bind9-dnsutils
