@@ -2,13 +2,13 @@
 export PATH="$PATH:$HOME/.local/bin:$HOME/bin:/usr/local/bin"
 
 # gloang
-#export GOBIN=$(which go)
-#export GOPATH=$HOME/go
-#export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-#if [ "${GOBIN}" ]
-#then
-#  go env -w GOPRIVATE=*
-#fi
+export GOBIN=$(which go)
+export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+if [ "${GOBIN}" ]
+then
+  go env -w GOPRIVATE=*
+fi
 
 # direenv
 eval "$(direnv hook bash)"
@@ -68,4 +68,3 @@ alias bssr=/home/gherlein/src/brightsign/general-tools/player-control-cli/set-re
 
 # go home
 #cd
-
