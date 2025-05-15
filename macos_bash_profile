@@ -3,4 +3,5 @@ alias top="top -o cpu"
 alias draw.io='/Applications/draw.io.app/Contents/MacOS/draw.io'
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/bin/:$PATH"
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
