@@ -4,4 +4,6 @@ alias draw.io='/Applications/draw.io.app/Contents/MacOS/draw.io'
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/bin/:$PATH"
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export DOTNET_ROOT=/usr/local/share/dotnet
+export PATH=$PATH:/usr/local/share/dotnet
 
