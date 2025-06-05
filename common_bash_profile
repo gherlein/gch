@@ -1,14 +1,12 @@
-# local bin
 export PATH="$PATH:$HOME/.local/bin:$HOME/bin:/usr/local/bin"
 
 # gloang
-export GOBIN=$(which go)
+#export GOBIN=$(which go)
+
+export GOBIN=$HOME/go/bin
+export PATH=$PATH:$GOBIN
 export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-if [ "${GOBIN}" ]
-then
-  go env -w GOPRIVATE=*
-fi
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:$GOBIN
 
 # direenv
 eval "$(direnv hook bash)"
@@ -67,4 +65,6 @@ alias bssr=/home/gherlein/src/brightsign/general-tools/player-control-cli/set-re
 #alias gerrit='ssh -p 29418 $USER@cam-gerrit.brightsign.info gerrit'
 
 # go home
-#cd
+cd
+
+alias zed="~/Downloads/zed-preview.app/bin/zed"

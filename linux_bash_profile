@@ -31,7 +31,7 @@ then
 fi
 
 # new SSH keychain
-#/usr/bin/keychain $HOME/.ssh/gherlein
+/usr/bin/keychain $HOME/.ssh/gherlein
 source $HOME/.keychain/$HOSTNAME-sh
 
 # platformio
@@ -45,3 +45,10 @@ source $HOME/.keychain/$HOSTNAME-sh
 
 # pipx
 #export PATH=$PATH:/home/gherlein/.local/bin
+
+
+# PlatformIO
+export PATH=$PATH:/home/gherlein/.platformio/penv/bin
+
+
+
