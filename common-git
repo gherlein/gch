@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Use "interim commit" if no message is provided
+COMMIT_MSG="${1:-interim commit}"
+
+# Stage all changes, including deletions and dotfiles
+git add -A
+
+# Commit with the provided or default message
+git commit -am "$COMMIT_MSG"
+
+# Push to main branch
+git push origin main
+
