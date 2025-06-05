@@ -40,7 +40,7 @@ elif [[ "$OSTYPE" == "freebsd"* ]]; then
 else
   echo
 fi
-#~/gch/tool-install
+~/gch/tool-install
 ~/gch/set-git
 -mkdir ~/bin
-cp lock unlock aws-whoami ~/bin
+cp common-git lock unlock aws-whoami ~/bin

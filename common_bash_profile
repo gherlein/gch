@@ -62,9 +62,11 @@ alias bsr=/home/gherlein/src/brightsign/general-tools/player-control-cli/reboot.
 alias bssr=/home/gherlein/src/brightsign/general-tools/player-control-cli/set-registry.sh
 
 # gerrit
-#alias gerrit='ssh -p 29418 $USER@cam-gerrit.brightsign.info gerrit'
+alias gerrit='ssh -p 29418 $USER@cam-gerrit.brightsign.info gerrit'
 
 # go home
 cd
 
-alias zed="~/Downloads/zed-preview.app/bin/zed"
+# git stuff
+alias gp='~/bin/common-git'
+
