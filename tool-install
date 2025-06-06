@@ -11,6 +11,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
      sudo $INSTALL -y apt-transport-https
      sudo $INSTALL -y unzipf
      sudo $INSTALL -y gnome-screensaver
+     curl -fsSL https://ollama.com/install.sh | sh
   elif [  -n "$(uname -a | grep Debian)" ]; then
      sudo apt-get update
      sudo $INSTALL -y git
