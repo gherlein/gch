@@ -1,0 +1,14 @@
+# meant to enable the GPU on our Ryzen AI boxes
+sudo apt update
+sudo apt install python3-setuptools python3-wheel
+wget https://repo.radeon.com/amdgpu-install/6.4.1/ubuntu/noble/amdgpu-install_6.4.60401-1_all.deb
+sudo apt install ./amdgpu-install_6.4.60401-1_all.deb
+amdgpu-install -y --usecase=workstation,rocm
+sudo reboot
+sudo usermod -a -G render,video $LOGNAME
+groups
+dkms status
+rocminfo
+clinfo
+# Ollama
+curl -fsSL https://ollama.com/install.sh | sh
