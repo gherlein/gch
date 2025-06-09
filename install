@@ -43,4 +43,4 @@ fi
 ~/gch/tool-install
 ~/gch/set-git
 -mkdir ~/bin
-cp otest common-git lock unlock aws-whoami ~/bin
+cp ollm-* otest common-git lock unlock aws-whoami ~/bin
