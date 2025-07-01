@@ -3,12 +3,15 @@
 # Use "interim commit" if no message is provided
 COMMIT_MSG="${1:-interim commit}"
 
+# Use "main" if no branch is provided
+BRANCH="${2:-main}"
+
 # Stage all changes, including deletions and dotfiles
 git add -A
 
 # Commit with the provided or default message
 git commit -am "$COMMIT_MSG"
 
-# Push to main branch
-git push origin main
+# Push to specified branch
+git push origin "$BRANCH"
 
